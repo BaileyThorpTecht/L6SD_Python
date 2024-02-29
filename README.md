@@ -31,4 +31,4 @@ Using the time module to measure how long it takes for the sorting algos to work
   
 Creating various searching algorithms  
 Using pytest to test the sorting algos with the 5 different list types (ongoing...)  
-Making 'Design Patterns' (not started...)  
+Researching 'Design Patterns' and using them in some scenarios

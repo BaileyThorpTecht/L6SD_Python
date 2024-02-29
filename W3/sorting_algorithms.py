@@ -34,7 +34,8 @@ def InsertionSort(arr):
     
     return sortedArr
 
-def SelectionSort(arr):
+def SelectionSort(self, arrIn):
+    arr = list(arrIn)
     sortedArr = []
     for i in range(0,len(arr)):
         lowest = min(arr)
@@ -83,6 +84,8 @@ def MergeSort(arr):
 
 
 
+
+
 def QuickSort(arr):
     high = len(arr) - 1
     low = 0
@@ -113,6 +116,11 @@ def Partition(arr, high, low):
     if RHigh - RLow > 0:
         Partition(arr, RHigh, RLow)
         
+        
+        
+        
+        
+        
 ######Other Functions
 
 def TestSorting(SortingMethod, data):
@@ -134,9 +142,10 @@ list1 = [765, 234, 512, 789, 321, 456, 876, 123, 678, 543,
 765, 432, 789, 123, 890, 567, 876, 345, 654, 321,
 908, 765, 432, 789, 123, 890, 567, 876, 345, 654]
 
-df = pd.read_excel(r"C:\Users\Bailey\Desktop\Python_Exercises\W3\rugby_players_data_extra.xlsx")
-#chosenCol = 6
-#colName = df.columns[chosenCol]
+df = pd.read_excel(r"C:\Users\Bailey\Desktop\L6SD_Python\W3\rugby_players_data_extra.xlsx")
+#columns names:
+#Name Age Height Gender 'Sorted Name' 'Reversed Name' Empty
+#probably just use 'Age' for duplicate data
 colName = "Name"
 colData = df[colName]
 

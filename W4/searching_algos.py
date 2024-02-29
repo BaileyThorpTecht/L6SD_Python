@@ -9,7 +9,7 @@ def LinearSearch(arr, searchTerm):
 def BinarySearch(arr, searchTerm):
     low = 0
     high = len(arr) - 1
-    while True:
+    while high - low > 0:
         median = int((high + low) / 2)
         medianValue = arr[median]
         if medianValue < searchTerm:
@@ -45,6 +45,6 @@ listSorted = [123, 123, 123, 123, 234, 234, 321, 321, 321, 321,
 876, 876, 876, 890, 890, 890, 890, 908, 908, 908]
 
 
-searchTerm = 500
+searchTerm = 654
 position = BinarySearch(listSorted, searchTerm)
 print(position)

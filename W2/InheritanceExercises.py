@@ -1,14 +1,14 @@
 def Single():
     
     class animal():
-        #def __init__():    
-        sound = "placeholder"
+        def __init__():    
+            sound = "placeholder"
         def make_sound(self):
             print(self.sound)
     
     class dog(animal):
-        #def __init__():
-        sound = "woof"
+        def __init__():
+            sound = "woof"
 
     anim = dog()
     anim.make_sound()
