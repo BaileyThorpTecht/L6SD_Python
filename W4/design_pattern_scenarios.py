@@ -31,6 +31,10 @@ def PresidentsOfficialPen():
 #                                       #
 
 def CarManufacturingPlant():
+    class Car():
+        def Construct(self):
+            pass
+    
     class VDub():
         def Construct(self):
             print("VDub being put together")
@@ -168,7 +172,7 @@ def GreetingCardPersonalization():
 
 
 #PresidentsOfficialPen()
-#CarManufacturingPlant()
+CarManufacturingPlant()
 #DrawingTool()
 #GlobalCounter()
-GreetingCardPersonalization()
+#GreetingCardPersonalization()

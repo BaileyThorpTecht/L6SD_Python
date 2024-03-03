@@ -1,12 +1,12 @@
 import pandas as pd
 import pytest as pt
-
+import openpyxl 
 #is it really necessary to have the algos in a class?
 #if not, maybe just copy and paste the w3 sorting algos
 
 class Algorithms():
     
-    def BubbleSort(self, arr):
+    def BubbleSort(arr):
         
         leng = len(arr)
         for i in range(leng - 1):
@@ -17,7 +17,7 @@ class Algorithms():
             i += 1
         return arr
     
-    def InsertionSort(self, arr):
+    def InsertionSort(arr):
     
         sortedArr = []
         for num in arr: #for every number in the input array...
@@ -28,7 +28,7 @@ class Algorithms():
                 sortedArr.insert(i,num)
         return sortedArr
     
-    def SelectionSort(self, arrIn):
+    def SelectionSort(arrIn):
         arr = list(arrIn)
         sortedArr = []
         for i in range(0,len(arr)):
@@ -37,7 +37,7 @@ class Algorithms():
             sortedArr.append(arr.pop(lowestIndex))   
         return sortedArr
     
-    def MergeSort(self, arr):
+    def MergeSort(arr):
 
         if len(arr) <= 1: #if array is unit length just return it immediately
             return arr
@@ -46,8 +46,8 @@ class Algorithms():
         middle = int(len(arr) / 2)
         leftSplit = arr[:middle]
         rightSplit = arr[middle:]
-        arrL = self.MergeSort(leftSplit)
-        arrR = self.MergeSort(rightSplit)
+        arrL = Algorithms.MergeSort(leftSplit)
+        arrR = Algorithms.MergeSort(rightSplit)
         
         i = j = k = 0
         arrTemp = []
