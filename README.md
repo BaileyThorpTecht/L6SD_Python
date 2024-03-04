@@ -26,9 +26,8 @@ Using the time module to measure how long it takes for the sorting algos to work
   
   
 ---- Week 4:  
-3 .py files   
-(...so far)  
+4 .py files   
   
 Creating various searching algorithms  
-Using pytest to test the sorting algos with the 5 different list types (ongoing...)  
+Using pytest to test the sorting algos with the 5 different list types
 Researching 'Design Patterns' and using them in some scenarios

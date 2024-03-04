@@ -1,13 +1,11 @@
 import pandas as pd
 import pytest as pt
 import openpyxl 
-#is it really necessary to have the algos in a class?
-#if not, maybe just copy and paste the w3 sorting algos
 
 class Algorithms():
     
-    def BubbleSort(arr):
-        
+    def BubbleSort(arrIn):
+        arr = list(arrIn)
         leng = len(arr)
         for i in range(leng - 1):
             for j in range(leng - i - 1):
@@ -17,8 +15,8 @@ class Algorithms():
             i += 1
         return arr
     
-    def InsertionSort(arr):
-    
+    def InsertionSort(arrIn):
+        arr = list(arrIn)
         sortedArr = []
         for num in arr: #for every number in the input array...
             i = len(sortedArr) #starting at the end of the sortedArray...
@@ -37,8 +35,9 @@ class Algorithms():
             sortedArr.append(arr.pop(lowestIndex))   
         return sortedArr
     
-    def MergeSort(arr):
-
+    def MergeSort(arrIn):
+        arr = list(arrIn)
+        
         if len(arr) <= 1: #if array is unit length just return it immediately
             return arr
         
@@ -72,6 +71,50 @@ class Algorithms():
                 arrTemp.append(arrR[j])
                 j += 1
         return arrTemp
+
+    def QuickSort(arrIn):
+        arr = list(arrIn)
+        
+        #just sets left and right for the first iteration
+        return Algorithms.QuickSortRecurse(arr, 0, len(arr)-1)
+    
+    def QuickSortRecurse(arr, left, right):
+        while (left < right):
+            i = Algorithms.Partition(arr, left, right)
+            
+            LSize = i - left
+            RSize = right - i
+            
+            if LSize < RSize: #do the smaller side first
+                #left
+                Algorithms.QuickSortRecurse(arr, left, i - 1)
+                left = i + 1 #This line is similar to recusing QuickSortRecurse again, instead relying on the while (left < right) loop
+                #Algorithms.QuickSortRecurse(arr, i + 1, right)
+            else:
+                #right
+                Algorithms.QuickSortRecurse(arr, i + 1, right)
+                right = i - 1
+            
+        return arr
+    
+    #Partition takes in the list, left boundary and right boundary.
+    #returns the point the pivot is at
+    def Partition(arr, low, high):
+        i = low #pointer
+        pivot = arr[high]
+        
+        #move elements smaller than pivot to left
+        for j in range(low, high):
+            if arr[j] < pivot:
+                arr[j], arr[i] = arr[i], arr[j]
+                i += 1
+
+        #swap pivot with pointer. all smaller is on the left, larger on the right
+        #pivot is in the correct position
+        arr[high], arr[i] = arr[i], arr[high]
+        
+        return i
+        
     
 # #                     # # #                     # #
 # ------ Below Here Is Not Needed For Pytest ------ #
@@ -88,9 +131,8 @@ algos = Algorithms()
 algoList = [algos.BubbleSort, algos.InsertionSort, algos.SelectionSort, algos.MergeSort]
 
 #print(algoList[0](list1))
-#print(algoList[1](list1))
-#print(algoList[2](list1))
-#print(algoList[3](list1))
+
+print(Algorithms.QuickSort(list1))
 
     
 

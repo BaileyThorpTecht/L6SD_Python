@@ -5,7 +5,8 @@ import numpy as np
 
 ###### sorting algos
 
-def BubbleSort(arr):
+def BubbleSort(arrIn):
+    arr = list(arrIn)
 
     leng = len(arr)
     #i = 0
@@ -22,8 +23,8 @@ def BubbleSort(arr):
     return arr
 
 
-def InsertionSort(arr):
-    
+def InsertionSort(arrIn):
+    arr = list(arrIn)
     sortedArr = []
     for num in arr: #for every number in the input array...
         i = len(sortedArr) #starting at the end of the sortedArray...
@@ -45,8 +46,9 @@ def SelectionSort(self, arrIn):
     return sortedArr
     
 
-def MergeSort(arr):
-
+def MergeSort(arrIn):
+    arr = list(arrIn)
+    
     if len(arr) <= 1: #if array is unit length just return it immediately
         return arr
     
@@ -86,7 +88,9 @@ def MergeSort(arr):
 
 
 
-def QuickSort(arr):
+def QuickSort(arrIn):
+    arr = list(arrIn)
+    
     high = len(arr) - 1
     low = 0
     Partition(arr, high, low)
@@ -111,9 +115,12 @@ def Partition(arr, high, low):
     LHigh = i - 1
     RLow = i + 1
     RHigh = high
-    if LHigh - LLow > 0:
+    LSize = LHigh - LLow
+    RSize = RHigh - RLow
+    
+    if LSize > 0:
         Partition(arr, LHigh, LLow)
-    if RHigh - RLow > 0:
+    if RSize > 0:
         Partition(arr, RHigh, RLow)
         
         
@@ -146,12 +153,14 @@ df = pd.read_excel(r"C:\Users\Bailey\Desktop\L6SD_Python\W3\rugby_players_data_e
 #columns names:
 #Name Age Height Gender 'Sorted Name' 'Reversed Name' Empty
 #probably just use 'Age' for duplicate data
-colName = "Name"
-colData = df[colName]
+#colName = "Name"
+#colData = df[colName]
 
-TestSorting(BubbleSort, colData.tolist())
-TestSorting(InsertionSort, colData.tolist())
-TestSorting(SelectionSort, colData.tolist())
-TestSorting(MergeSort, colData.tolist())
-TestSorting(QuickSort, colData.tolist()) 
+# TestSorting(BubbleSort, colData.tolist())
+# TestSorting(InsertionSort, colData.tolist())
+# TestSorting(SelectionSort, colData.tolist())
+# TestSorting(MergeSort, colData.tolist())
+# TestSorting(QuickSort, colData.tolist()) 
+
+print(QuickSort(list0))
 
