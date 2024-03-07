@@ -31,3 +31,9 @@ Using the time module to measure how long it takes for the sorting algos to work
 Creating various searching algorithms  
 Using pytest to test the sorting algos with the 5 different list types
 Researching 'Design Patterns' and using them in some scenarios
+
+
+---- Week 5:
+
+Making a website of our own design and liking
+Learning about branches and source control.
