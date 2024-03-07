@@ -1,4 +1,6 @@
 # L6SD_Python
+This repository is for my python programs done in the first half of term 1
+
 ---- Week 1:  
 4 .py files  
 1 .docx file  
@@ -32,8 +34,12 @@ Creating various searching algorithms
 Using pytest to test the sorting algos with the 5 different list types
 Researching 'Design Patterns' and using them in some scenarios
 
+<<<<<<< HEAD
 
 ---- Week 5:
 
 Making a website of our own design and liking
 Learning about branches and source control.
+=======
+end
+>>>>>>> 9a7d93e8b3d3aa6615a0dde7be18d24a3ffe3813
