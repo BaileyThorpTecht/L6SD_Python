@@ -1,4 +1,6 @@
 # L6SD_Python
+This repository is for my python programs done in the first half of term 1
+
 ---- Week 1:  
 4 .py files  
 1 .docx file  
@@ -31,3 +33,5 @@ Using the time module to measure how long it takes for the sorting algos to work
 Creating various searching algorithms  
 Using pytest to test the sorting algos with the 5 different list types
 Researching 'Design Patterns' and using them in some scenarios
+
+end
